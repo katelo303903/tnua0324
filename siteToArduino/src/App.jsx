@@ -2,11 +2,23 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
-import './App.css'
+//import './App.css'
+import React from 'react';
+import { Carousel } from 'antd';
+const contentStyle = {
+  margin: 0,
+  height: '160px',
+  color: '#fff',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+};
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const onChange = currentSlide => {
+    console.log(currentSlide);
+  };
   return (
     <>
       <section id="center">
@@ -17,6 +29,23 @@ function App() {
         </div>
         <div>
           <h1>site to arduino</h1>
+          <div>
+          <Carousel autoplay afterChange={onChange}>
+      <div>
+        <h3 style={contentStyle}>1</h3>
+      </div>
+      <div>
+        <h3 style={contentStyle}>2</h3>
+      </div>
+    
+      <div>
+        <h3 style={contentStyle}>3</h3>
+      </div>
+      <div>
+        <h3 style={contentStyle}>4</h3>
+      </div>
+    </Carousel>
+    </div>
           <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
